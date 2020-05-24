@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="820" height="250" viewBox="0 0 820 250">
+  <defs>
+    <clipPath id="clip-LOGO">
+      <rect width="820" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="LOGO" clip-path="url(#clip-LOGO)">
+    <g id="logo-2" data-name="logo">
+      <path id="campground-solid" d="M169.406,121.623h-6.7l-65.1-89.657L112.109,12a4.345,4.345,0,0,0-.961-6.068l-7.031-5.1a4.343,4.343,0,0,0-6.068.964L86.875,17.184,75.7,1.79A4.345,4.345,0,0,0,69.63.827L62.6,5.931A4.342,4.342,0,0,0,61.643,12l14.5,19.968-65.1,89.657h-6.7A4.343,4.343,0,0,0,0,125.967v8.687A4.343,4.343,0,0,0,4.344,139H169.406a4.343,4.343,0,0,0,4.344-4.344v-8.687A4.343,4.343,0,0,0,169.406,121.623ZM86.875,78.186l31.59,43.437H55.285Z" transform="translate(0.177 55.143)" fill="#489755"/>
+      <text id="Biwapp" transform="translate(174 194)" fill="#141414" font-size="191" font-family="Reross-Rectangular, Reross Rectangular"><tspan x="0" y="0">Biwapp</tspan></text>
+    </g>
+  </g>
+</svg>

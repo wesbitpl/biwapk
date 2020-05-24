@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170" height="136" viewBox="0 0 170 136">
+  <defs>
+    <clipPath id="clip-LOGO_ICON">
+      <rect width="170" height="136"/>
+    </clipPath>
+  </defs>
+  <g id="LOGO_ICON" data-name="LOGO ICON" clip-path="url(#clip-LOGO_ICON)">
+    <g id="Icon">
+      <path id="campground-solid" d="M165.75,119h-6.556L95.5,31.276,109.69,11.739a4.251,4.251,0,0,0-.94-5.937L101.87.811a4.249,4.249,0,0,0-5.937.943L85,16.813,74.064,1.752A4.251,4.251,0,0,0,68.127.809L61.253,5.8a4.249,4.249,0,0,0-.94,5.937L74.5,31.276,10.806,119H4.25A4.249,4.249,0,0,0,0,123.249v8.5A4.249,4.249,0,0,0,4.25,136h161.5a4.249,4.249,0,0,0,4.25-4.25v-8.5A4.249,4.249,0,0,0,165.75,119ZM85,76.5,115.908,119H54.092Z" transform="translate(0 0.002)" fill="#489755"/>
+    </g>
+  </g>
+</svg>
