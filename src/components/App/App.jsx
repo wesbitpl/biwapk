@@ -7,7 +7,7 @@ import { StyledApp } from "./App.styled";
 import Header from "../Header/Header";
 import Burger from "../Burger/Burger";
 import Menu from "../Menu/Menu";
-
+import HomePage from "../Pages/HomePage/HomePage";
 function App() {
   const [open, setOpen] = useState(false);
   return (
@@ -18,6 +18,13 @@ function App() {
           <StyledApp>
             <Header open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen}></Menu>
+            <main style={{ marginTop: "32px" }}>
+              <Switch>
+                <Route exact path="/">
+                  <HomePage />
+                </Route>
+              </Switch>
+            </main>
           </StyledApp>
         </>
       </ThemeProvider>
