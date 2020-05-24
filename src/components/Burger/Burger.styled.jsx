@@ -4,6 +4,7 @@ export const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   width: 50px;
   height: 50px;
   background: ${({ theme }) => theme.color.white};
