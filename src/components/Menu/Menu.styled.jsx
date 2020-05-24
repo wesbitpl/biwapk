@@ -1,39 +1,39 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: ${({ theme }) => theme.color.white};
   height: 100vh;
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  @media (max-width: ${({ theme }) => theme.rwd.m}) {
-    width: 100%;
+  right: 0;
+  padding: 100px 16px;
+  box-shadow: ${({ theme }) => theme.shadow};
+  transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(110%);")};
+  transition: transform 0.2s ease-in-out;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+  svg {
+    width: 25px;
   }
-
-  a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
-    color: ${({ theme }) => theme.color.black};
-    text-decoration: none;
-    transition: color 0.3s linear;
-
-    @media (max-width: ${({ theme }) => theme.rwd.m}) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    &:hover {
-      color: ${({ theme }) => theme.color.blue};
+  &.active {
+    background: ${({ theme }) => theme.color.blue};
+    svg {
+      * {
+        fill: ${({ theme }) => theme.color.white};
+        stroke: ${({ theme }) => theme.color.white};
+      }
     }
   }
 `;

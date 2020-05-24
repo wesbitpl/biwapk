@@ -1,29 +1,25 @@
 import styled from "styled-components";
 
 export const StyledBurger = styled.button`
-  position: absolute;
-  top: 5%;
-  left: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
+  width: 50px;
+  height: 50px;
+  background: ${({ theme }) => theme.color.white};
   border: none;
   cursor: pointer;
-  padding: 0;
-  z-index: 10;
-
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: ${({ theme }) => theme.shadow};
   &:focus {
     outline: none;
   }
 
   div {
-    width: 2rem;
-    height: 0.25rem;
+    width: 25px;
+    height: 4px;
     background: ${({ theme }) => theme.color.blue};
-    border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;

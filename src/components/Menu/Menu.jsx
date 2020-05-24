@@ -1,28 +1,23 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import { bool } from "prop-types";
-import { StyledMenu } from "./Menu.styled";
+import { StyledMenu, StyledNavLink } from "./Menu.styled";
+import { ReactComponent as HomeIcon } from "../../assets/images/menuIcons/home.svg";
+import { ReactComponent as PlusIcon } from "../../assets/images/menuIcons/plus.svg";
+import { ReactComponent as ListIcon } from "../../assets/images/menuIcons/list.svg";
 
-const Menu = ({ open }) => {
+const Menu = ({ open, setOpen }) => {
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-        </span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">
-          &#x1f4b8;
-        </span>
-        Pricing
-      </a>
-      <a href="/">
-        <span role="img" aria-label="contact">
-          &#x1f4e9;
-        </span>
-        Contact
-      </a>
+      <StyledNavLink exact to="/" onClick={() => setOpen(!open)}>
+        <HomeIcon />
+      </StyledNavLink>
+      <StyledNavLink exact to="/add" onClick={() => setOpen(!open)}>
+        <PlusIcon />
+      </StyledNavLink>
+      <StyledNavLink exact to="/list" onClick={() => setOpen(!open)}>
+        <ListIcon />
+      </StyledNavLink>
     </StyledMenu>
   );
 };
