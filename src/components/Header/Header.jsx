@@ -7,7 +7,7 @@ import Face from "../../assets/images/Face.png";
 export default function Header({ open, setOpen }) {
   return (
     <StyledHeader>
-      <Link to="/">
+      <Link to="/" onClick={() => setOpen(false)}>
         <img src={Icon} alt="logo icon" height="50px" />
       </Link>
       <div className="face">
