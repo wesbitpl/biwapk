@@ -4,16 +4,20 @@ import { StyledHeader } from "./Header.styled";
 import Burger from "../Burger/Burger";
 import Icon from "../../assets/images/icon.svg";
 import Face from "../../assets/images/Face.png";
-export default function Header({ open, setOpen }) {
+export default function Header({ open, setOpen, isLogin }) {
   return (
     <StyledHeader>
       <Link to="/" onClick={() => setOpen(false)}>
         <img src={Icon} alt="logo icon" height="50px" />
       </Link>
-      <div className="face">
-        <img src={Face} alt="face" />
-      </div>
-      <Burger open={open} setOpen={setOpen} />
+      {isLogin ? (
+        <div className="face">
+          <img src={Face} alt="face" />
+        </div>
+      ) : (
+        ""
+      )}
+      {isLogin ? <Burger open={open} setOpen={setOpen} /> : ""}
     </StyledHeader>
   );
 }
