@@ -5,7 +5,7 @@ import Burger from "../Burger/Burger";
 import Icon from "../../assets/images/icon.svg";
 import Face from "../../assets/images/Face.png";
 import { logout } from "../../utils/logout/logout";
-export default function Header({ open, setOpen, isLogin, setIsLogin }) {
+export default function Header({ open, setOpen, isLogin, setIsLogin, user }) {
   const [profileModalIsOpen, setProfileModalIsOpen] = useState(false);
   return (
     <StyledHeader>
@@ -17,7 +17,7 @@ export default function Header({ open, setOpen, isLogin, setIsLogin }) {
           <img src={Face} alt="face" />
           {profileModalIsOpen ? (
             <StyledProfile>
-              <h4>10 jakaś tam drużyna harcerzy</h4>
+              <h4>{user.username}</h4>
               <button
                 onClick={() => {
                   setIsLogin(false);
