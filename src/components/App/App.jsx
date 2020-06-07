@@ -23,6 +23,7 @@ function App() {
       setUser(JSON.parse(localStorage.getItem("user")));
     }
   }, []);
+  console.log(process.env);
   return (
     <Router history={history}>
       <ThemeProvider theme={theme}>
