@@ -17,6 +17,7 @@ export const StyledHeader = styled.header`
 export const StyledFace = styled.div`
   grid-area: face;
   position: relative;
+  cursor: pointer;
 `;
 
 export const StyledProfile = styled.div`
@@ -40,5 +41,6 @@ export const StyledProfile = styled.div`
     color: ${({ theme }) => theme.color.white};
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
   }
 `;

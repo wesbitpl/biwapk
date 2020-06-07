@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../../theme/global.jsx";
 import { theme } from "../../theme/theme.jsx";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 import history from "../../utils/history/history";
 import { StyledApp } from "./App.styled";
 import Header from "../Header/Header";

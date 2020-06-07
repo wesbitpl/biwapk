@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { StyledLoginPage, StyledError } from "./LoginPage.styled";
 import axios from "axios";
-// import { useHistory } from "react-router-dom";
-import CryptoJS from "crypto-js";
 
 export default function LoginPage({ setIsLogin, history, setToken, setUser, URL }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginErr, setLoginErr] = useState(false);
+  const [logging, setLogging] = useState(false);
   const handleLogin = (e) => {
     e.preventDefault();
+    if (username === "" && password === "") {
+      setLoginErr(true);
+      return;
+    }
+    setLogging(true);
     const post = async () => {
       try {
         const response = await axios.post(`${URL}/auth/local`, {
@@ -27,21 +31,10 @@ export default function LoginPage({ setIsLogin, history, setToken, setUser, URL 
         }
       } catch (error) {
         setLoginErr(true);
+        setLogging(false);
       }
     };
     post();
-    // if (username === "demo" && password === hash) {
-    //   setLoginErr(false);
-    //   setIsLogin(true);
-    //   const hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, "secret passphrase");
-    //   hmac.update(username);
-    //   hmac.update(password);
-    //   const token = hmac.finalize();
-    //   localStorage.setItem("token", token);
-    //   // history.replace("/");
-    // } else {
-    //   setLoginErr(true);
-    // }
   };
   return (
     <StyledLoginPage>
@@ -54,7 +47,7 @@ export default function LoginPage({ setIsLogin, history, setToken, setUser, URL 
         <label htmlFor="password"></label>
         <input id="password" type="password" placeholder="Hasło" onChange={(e) => setPassword(e.target.value)} />
         <StyledError loginErr={loginErr}>{loginErr ? "Błędny login lub hasło" : ""}</StyledError>
-        <button onClick={(e) => handleLogin(e)}>Zaloguj</button>
+        <button onClick={(e) => handleLogin(e)}>{logging ? "Logowanie..." : "Zaloguj"}</button>
       </form>
       <div>
         <span>Login: demo</span>
