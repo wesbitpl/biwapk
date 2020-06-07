@@ -4,7 +4,7 @@ import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import CryptoJS from "crypto-js";
 
-export default function LoginPage({ setIsLogin, history, setToken, setUser }) {
+export default function LoginPage({ setIsLogin, history, setToken, setUser, URL }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginErr, setLoginErr] = useState(false);
@@ -12,7 +12,7 @@ export default function LoginPage({ setIsLogin, history, setToken, setUser }) {
     e.preventDefault();
     const post = async () => {
       try {
-        const response = await axios.post("/auth/local", {
+        const response = await axios.post(`${URL}/auth/local`, {
           identifier: username,
           password: password,
         });

@@ -38,7 +38,7 @@ function App() {
                 <Route exact path="/">
                   {!isLogin ? <Redirect to="/login" /> : <HomePage token={token} URL={URL} />}
                 </Route>
-                <Route path="/login">{isLogin ? <Redirect to="/" /> : <LoginPage setIsLogin={setIsLogin} history={history} setToken={setToken} setUser={setUser} />}</Route>
+                <Route path="/login">{isLogin ? <Redirect to="/" /> : <LoginPage setIsLogin={setIsLogin} history={history} setToken={setToken} setUser={setUser} URL={URL} />}</Route>
                 <Route path="/applications/:id">
                   <ApplicationPage token={token} URL={URL} />
                 </Route>
