@@ -11,11 +11,13 @@ import HomePage from "../Pages/HomePage/HomePage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import ApplicationPage from "../Pages/ApplicationPage/ApplicationPage";
 import { checkIsLogin } from "../../utils/login/checkIsLogin";
+import { url } from "../../utils/url";
 function App() {
   const [token, setToken] = useState("");
   const [user, setUser] = useState({});
   const [open, setOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  const [URL, setURL] = useState(url());
   useEffect(() => {
     if (checkIsLogin()) {
       setIsLogin(true);
@@ -23,7 +25,6 @@ function App() {
       setUser(JSON.parse(localStorage.getItem("user")));
     }
   }, []);
-  console.log(process.env);
   return (
     <Router history={history}>
       <ThemeProvider theme={theme}>
@@ -35,11 +36,11 @@ function App() {
             <main style={{ marginTop: "32px", display: "flex", flexDirection: "column", alignItems: "center" }}>
               <Switch>
                 <Route exact path="/">
-                  {!isLogin ? <Redirect to="/login" /> : <HomePage token={token} />}
+                  {!isLogin ? <Redirect to="/login" /> : <HomePage token={token} URL={URL} />}
                 </Route>
                 <Route path="/login">{isLogin ? <Redirect to="/" /> : <LoginPage setIsLogin={setIsLogin} history={history} setToken={setToken} setUser={setUser} />}</Route>
                 <Route path="/applications/:id">
-                  <ApplicationPage token={token} />
+                  <ApplicationPage token={token} URL={URL} />
                 </Route>
               </Switch>
             </main>

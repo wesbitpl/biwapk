@@ -3,11 +3,11 @@ import { StyledHomePage } from "./HomePage.styled";
 import HomePageComponent from "./components/HomePageComponent";
 import ApplicationsList from "../../Applications/ApplicationsList";
 
-function HomePage({ token }) {
+function HomePage({ token, URL }) {
   return (
     <StyledHomePage>
       <HomePageComponent />
-      <ApplicationsList token={token} />
+      <ApplicationsList token={token} URL={URL} />
     </StyledHomePage>
   );
 }

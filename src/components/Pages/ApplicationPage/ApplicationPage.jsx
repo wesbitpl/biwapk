@@ -3,9 +3,9 @@ import { useRouteMatch } from "react-router";
 import axios from "axios";
 import { StyledApplication } from "./StyledApplicationPage";
 
-export default function Application({ token }) {
+export default function Application({ token, URL }) {
   let match = useRouteMatch("/applications/:id");
-  const url = match.url;
+  const url = `${URL}${match.url}`;
   const [application, setApplication] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -22,7 +22,9 @@ export default function Application({ token }) {
         console.log(error);
       }
     };
-    fetchData();
+    if (token) {
+      fetchData();
+    }
   }, [url]);
   return (
     <>

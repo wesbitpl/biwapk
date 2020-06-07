@@ -4,10 +4,10 @@ import axios from "axios";
 import { StyledApplicationList, StyledName, StyledStatus, StyledArrow } from "./StyledApplicationsList";
 import Arrow from "../../assets/images/arrow.svg";
 
-export default function ApplicationsList({ token }) {
+export default function ApplicationsList({ token, URL }) {
   const [applicationsList, setApplicationsList] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const url = "/applications";
+  const url = `${URL}/applications`;
   const sort = "?_sort=createdAt:DESC";
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,7 @@ export default function ApplicationsList({ token }) {
             <li key={item.id}>
               <StyledName>{item.unit_main}</StyledName>
               <StyledStatus status={item.status}></StyledStatus>
-              <StyledArrow to={`${url}/${item.id}`}>
+              <StyledArrow to={`/applications/${item.id}`}>
                 <img src={Arrow} alt="" />
               </StyledArrow>
             </li>
