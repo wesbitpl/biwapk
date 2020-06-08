@@ -7,7 +7,7 @@ function HomePage({ token, URL }) {
   return (
     <StyledHomePage>
       <HomePageComponent />
-      <ApplicationsList token={token} URL={URL} />
+      <ApplicationsList token={token} URL={URL} limitNumber={5} />
     </StyledHomePage>
   );
 }
