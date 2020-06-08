@@ -9,6 +9,7 @@ import Header from "../Header/Header";
 import Menu from "../Menu/Menu";
 import HomePage from "../Pages/HomePage/HomePage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
+import ApplicationsPage from "../Pages/ApplicationsPage/ApplicationsPage";
 import ApplicationPage from "../Pages/ApplicationPage/ApplicationPage";
 import { checkIsLogin } from "../../utils/login/checkIsLogin";
 import { url } from "../../utils/url";
@@ -39,6 +40,9 @@ function App() {
                   {!isLogin ? <Redirect to="/login" /> : <HomePage token={token} URL={URL} />}
                 </Route>
                 <Route path="/login">{isLogin ? <Redirect to="/" /> : <LoginPage setIsLogin={setIsLogin} history={history} setToken={setToken} setUser={setUser} URL={URL} />}</Route>
+                <Route exact path="/applications">
+                  <ApplicationsPage token={token} URL={URL} />
+                </Route>
                 <Route path="/applications/:id">
                   <ApplicationPage token={token} URL={URL} />
                 </Route>

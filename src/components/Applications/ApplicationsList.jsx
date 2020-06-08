@@ -3,7 +3,7 @@ import axios from "axios";
 import { StyledApplicationList, StyledName, StyledStatus, StyledArrow } from "./StyledApplicationsList";
 import Arrow from "../../assets/images/arrow.svg";
 
-export default function ApplicationsList({ token, URL, limitNumber }) {
+export default function ApplicationsList({ children, token, URL, limitNumber }) {
   const [applicationsList, setApplicationsList] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const url = `${URL}/applications`;
@@ -30,7 +30,7 @@ export default function ApplicationsList({ token, URL, limitNumber }) {
 
   return (
     <StyledApplicationList>
-      <h2>Ostatnie zgłoszenia</h2>
+      <h2>{children}</h2>
       {isLoaded ? (
         <ul>
           {applicationsList.map((item) => (

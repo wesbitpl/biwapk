@@ -15,7 +15,7 @@ const Menu = ({ open, setOpen }) => {
       <StyledNavLink exact to="/add" onClick={() => setOpen(!open)}>
         <PlusIcon />
       </StyledNavLink>
-      <StyledNavLink exact to="/list" onClick={() => setOpen(!open)}>
+      <StyledNavLink exact to="/applications" onClick={() => setOpen(!open)}>
         <ListIcon />
       </StyledNavLink>
     </StyledMenu>
