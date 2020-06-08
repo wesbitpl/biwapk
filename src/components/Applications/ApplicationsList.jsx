@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { StyledApplicationList, StyledName, StyledStatus, StyledArrow } from "./StyledApplicationsList";
 import Arrow from "../../assets/images/arrow.svg";
 
-export default function ApplicationsList({ token, URL }) {
+export default function ApplicationsList({ token, URL, limitNumber }) {
   const [applicationsList, setApplicationsList] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const url = `${URL}/applications`;
-  const sort = "?_sort=createdAt:DESC";
+  const limit = limitNumber ? `&_limit=${limitNumber}` : "";
+  const sort = `?_sort=createdAt:DESC${limit}`;
   useEffect(() => {
     const fetchData = async () => {
       try {
